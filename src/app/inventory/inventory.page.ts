@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { Item } from 'models/item.model';
 import { ModalController, AlertController, NavController } from '@ionic/angular';
+import { ItemService } from '../services/item.service';
 import { AddPage } from '../modals/add/add.page';
 import { EditPage } from '../modals/edit/edit.page';
-import { ItemService } from '../services/item.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector: 'app-inventory',
+  templateUrl: './inventory.page.html',
+  styleUrls: ['./inventory.page.scss'],
 })
-export class HomePage implements OnInit {
+export class InventoryPage implements OnInit {
+
   viewMode = "Ava";
 
   Items: Item[] = [];
@@ -96,10 +97,11 @@ export class HomePage implements OnInit {
   }
 
   itemDescription(itemId: string){
-    this.navCtrl.navigateForward(['description', itemId]);
+    this.navCtrl.navigateForward(['description', itemId])
   }
 
-  openInventory(){
-    this.navCtrl.navigateRoot(['inventory']);
+  openHome(){
+    this.navCtrl.navigateRoot(['home']);
   }
+
 }

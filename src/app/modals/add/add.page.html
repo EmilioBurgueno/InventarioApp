@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Add Item</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form [formGroup]="additemForm">
+        <ion-item>
+            <ion-label position="floating">Name</ion-label>
+            <ion-input formControlName="name"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Description</ion-label>
+            <ion-input formControlName="description"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Price</ion-label>
+            <ion-input formControlName="price"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Category</ion-label>
+            <ion-input formControlName="category"></ion-input>
+        </ion-item>
+    </form>
+    <ion-button (click)="addItem()" expand="block">Create</ion-button>
+    <ion-button (click)="closeModal()" expand="block" fill="outline">Cancel</ion-button>
+</ion-content>
